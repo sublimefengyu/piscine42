@@ -17,12 +17,10 @@ int ft_find_next_prime(int nb)
 {
 	if (nb < 2)
 		return (0);
-	if (ft_is_prime(nb))
-		return (nb);
 	
-	while (!ft_is_prime(nb+1))
+	while (!ft_is_prime(nb))
 		nb++;
-	return (nb+1);
+	return (nb);
 
 }
 #include <stdio.h>
