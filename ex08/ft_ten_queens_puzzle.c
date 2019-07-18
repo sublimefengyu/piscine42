@@ -18,25 +18,24 @@ void	print_solution(int *solution)
 	ft_putchar('\n');
 }
 
-unsigned int	ft_abs(int number)
-{
-	if (number < 0)
-		return number * -1;
-	return number;
-}
-
 int	has_conflict(int *solution, int row, int col)
 {
 	int	i;
+	int	diff_col;
+	int	diff_row;
 
 	i = 0;
 	while (i < row)
 	{
-		// 在同一列
 		if (solution[i] == col)
 			return (1);
-		// 在对角线
-		if (ft_abs(col - solution[i]) == ft_abs(row -i))
+		diff_col = col - solution[i];
+		if (diff_col < 0)
+			diff_col = diff_col * -1;
+		diff_row = row -i;
+		id (diff_row < 0)
+			diff_row = diff_row * -1;
+		if (diff_row == diff_col)
 			return (1);
 		i++;
 	}
